@@ -1,5 +1,6 @@
 import logging
 import datetime
+from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 from django.db import models
 # Support the user's setting of custom expressions in the settings.py file
@@ -8,7 +9,7 @@ try:
 except:
         user_validations = None
 
-VALLIDATIONS = [
+VALIDATIONS = [
        ('attributes.utils.validation_simple', _('One or more characters')),
        ('attributes.utils.validation_integer', _('Integer number')),
        ('attributes.utils.validation_yesno', _('Yes or No')),
@@ -33,6 +34,7 @@ class AttributeOption(models.Model):
     error_message = models.CharField(_("Error Message"), default=_("Invalid Entry"), max_length=100)
                                                                         
     class Meta:
+        pass
 
     def __unicode__(self):
         return self.description
