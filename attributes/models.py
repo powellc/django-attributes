@@ -43,7 +43,6 @@ class BaseAttribute(models.Model):
     """
     Allows arbitrary name/value pairs (as strings) to be attached to a product.
     """
-    option = models.ForeignKey(AttributeOption)
     value = models.CharField(_('Value'), max_length=255)
 
     def _name(self):
